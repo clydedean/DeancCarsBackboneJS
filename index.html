@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEANC CARS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main_showcase">
+        <div class="intro_box">
+            <h1 class="main_title">DEANC <span class="gold_word">CARS</span></h1>
+            <p class="small_tag">Elegance in Motion.</p>
+            <button id="hero-buy-btn" class="gold_button">EXPLORE OUR COLLECTION</button>
+        </div>
+    </header>
+
+    <section id="showroom" class="hide_this">
+        <h2 class="title_bar">THE <span class="gold_word">COLLECTION</span></h2>
+        <div id="car-inventory" class="car_tiles">
+            </div>
+    </section>
+
+    <!--idk clients i guess-->
+    <section id="client_records" class="admin_area">
+        <h2 class="title_bar">CLIENT <span class="gold_word">RECORDS</span></h2>
+        <table class="client_table">
+            <thead>
+                <tr>
+                    <th>Client Name</th>
+                    <th>Address</th>
+                    <th>Car Purchased</th>
+                    <th>Card Details</th>
+                </tr>
+            </thead>
+            <tbody id="client_table_body">
+                </tbody>
+        </table>
+    </section>
+    <!--updating list of carsssssss-->
+    <section class="admin_area">
+        <h3 class="gold_word">ADMINISTRATION</h3>
+        
+        <div class="admin_group">
+            <div class="control_form">
+                <input type="text" id="input-brand" placeholder="Car Brand">
+                <input type="text" id="input-model" placeholder="Car Model">
+                <input type="number" id="input-price" placeholder="Price (₱)">
+                <!--file upload type for convenient ra-->
+                <label class="file_name">Upload Vehicle Image File:</label>
+                <input type="file" id="input-img" accept="image/*">
+                
+                <div class="button_row">
+                    <button id="add-car-btn" class="admin_button">ADD CAR</button>
+                    <button id="update-car-btn" class="admin_button" style="display:none;">UPDATE SELECTED</button>
+                    <button id="cancel-edit-btn" class="admin_button cancel" style="display:none;">CANCEL</button>
+                </div>
+            </div>
+
+            <div class="preview_box">
+                <p>Image Preview:</p>
+                <img id="admin-img-preview" src="img/Placeholder.jpg" alt="Preview"> 
+            </div>
+        </div>
+    </section>
+
+    <div id="custom-modal" class="popup_screen" style="display: none;">
+        <div class="popup_box">
+            <h3 class="gold_word">CONFIRM REMOVAL</h3>
+            <p>Are you sure you want to remove this vehicle from the collection?</p>
+            <div class="popup_buttons">
+                <button id="modal-cancel" class="popup_button cancel">CANCEL</button>
+                <button id="modal-confirm" class="popup_button confirm">REMOVE</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/template" id="car-card-template">
+        <div class="car_card_image">
+            <img src="<%= image %>" alt="<%= model %>">
+        </div>
+        <div class="car_details">
+            <h3 class="car_brand"><%= brand %></h3>
+            <h4 class="car_model"><%= model %></h4>
+            <p class="car_price">₱<%= price.toLocaleString() %></p>
+            
+            <div class="button_group">
+                <button class="buy_button">PURCHASE</button>
+                <div class="admin_links">
+                    <span class="edit_link">Edit</span> | 
+                    <span class="delete_link">Remove</span>
+                </div>
+            </div>
+        </div>
+    </script>
+    
+    <script type="text/template" id="client-row-template">
+        <td><%= name %></td>
+        <td><%= address %></td>
+        <td><%= purchasedCar %></td>
+        <td><%= card %></td>
+    </script>
+
+    <!-- backbone cdns -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.0/backbone-min.js"></script>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>

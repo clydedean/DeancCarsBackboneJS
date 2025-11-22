@@ -1,0 +1,265 @@
+/* css */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #050505;
+    color: #e0e0e0;
+    font-family: 'Didot', 'Times New Roman', serif;
+    overflow-x: hidden;
+}
+
+
+.gold_word { color: #D4AF37; }
+.hide_this { display: none; padding: 50px 20px; animation: fadeIn 1s ease; }
+
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+
+
+.main_showcase {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+}
+
+
+.main_title { font-size: 4rem; letter-spacing: 5px; margin-bottom: 10px; }
+.small_tag { font-family: sans-serif; font-weight: 300; letter-spacing: 3px; color: #888; margin-bottom: 30px; }
+
+
+.gold_button {
+    background: transparent;
+    color: #D4AF37;
+    border: 1px solid #D4AF37;
+    padding: 15px 40px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.4s;
+    text-transform: uppercase;
+}
+
+
+.gold_button:hover { background: #D4AF37; color: #000; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+
+
+/* Inventory */
+.title_bar { text-align: center; font-size: 2.5rem; margin-bottom: 50px; border-bottom: 1px solid #333; padding-bottom: 20px; }
+
+.car_tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+.car_card {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    transition: 0.3s;
+    position: relative;
+}
+
+
+.car_card:hover { border-color: #D4AF37; transform: translateY(-5px); }
+
+
+.car_card_image img { width: 100%; height: 200px; object-fit: cover; filter: grayscale(30%); transition: 0.3s; }
+.car_card:hover .car_card_image img { filter: grayscale(0%); }
+
+
+.car_details { padding: 20px; text-align: center; }
+.car_brand { color: #D4AF37; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; }
+.car_model { font-size: 1.5rem; margin: 10px 0; font-weight: normal; }
+.car_price { font-family: sans-serif; color: #fff; font-weight: bold; margin-bottom: 20px; }
+
+
+
+.buy_button {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-top: 1px solid #333;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+.buy_button:hover { background: #D4AF37; color: #000; }
+
+
+
+.client_table {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto 40px;
+    border-collapse: collapse;
+}
+
+
+
+.client_table th {
+    background-color: #1a1a1a;
+    color: #D4AF37;
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+
+
+.client_table td {
+    border: 1px solid #222;
+    padding: 10px 12px;
+    text-align: left;
+    font-family: sans-serif;
+    color: #ccc;
+}
+
+
+
+.admin_area {
+    margin-top: 100px;
+    border-top: 1px solid #222;
+    padding: 40px 20px;
+    background: #080808;
+    text-align: center;
+}
+
+
+
+.admin_group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+
+.control_form, .preview_box {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.control_form input[type="text"], 
+.control_form input[type="number"] {
+    background: #111;
+    border: 1px solid #333;
+    color: #D4AF37;
+    padding: 12px;
+    width: 100%;
+}
+
+/* file inputstyle */
+.file_name { text-align: left; color: #888; font-size: 0.9rem; margin-bottom: -10px; }
+input[type="text"], input[type="file"] {
+    background: #111;
+    color: #aaa;
+    padding: 10px;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+input[type="file"]::file-selector-button {
+    background: #333;
+    color: #D4AF37;
+    border: 1px solid #D4AF37;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+input[type="file"]::file-selector-button:hover {
+    background: #D4AF37;
+    color: #000;
+}
+
+
+/* Adminn preview*/
+#admin-img-preview {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid #333;
+    background: #000;
+}
+
+
+
+.button_row { display: flex; gap: 10px; margin-top: 10px; }
+
+
+
+.admin_button { 
+    flex: 1; 
+    background: #333; 
+    color: #fff; 
+    border: none; 
+    padding: 12px; 
+    cursor: pointer; 
+    font-weight: bold;
+}
+
+
+.admin_button:hover { background: #D4AF37; color: #000; }
+.admin_button.cancel { background: #555; color: #ccc; }
+.admin_button.cancel:hover { background: #fff; color: #000; }
+
+.admin_links { margin-top: 10px; font-size: 0.8rem; color: #555; }
+.edit_link, .delete_link { cursor: pointer; transition: 0.2s; }
+.edit_link:hover { color: #D4AF37; }
+.delete_link:hover { color: red; }
+
+
+
+.popup_screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+
+
+.popup_box {
+    background: #0a0a0a;
+    border: 1px solid #D4AF37;
+    padding: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+
+
+.popup_box p { color: #ccc; margin: 20px 0 30px; font-family: sans-serif; }
+.popup_buttons { display: flex; justify-content: center; gap: 15px; }
+.popup_button { padding: 10px 25px; border: none; cursor: pointer; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; transition: 0.3s; }
+.popup_button.cancel { background: #222; color: #fff; border: 1px solid #444; }
+.popup_button.cancel:hover { background: #fff; color: #000; }
+.popup_button.confirm { background: #8b0000; color: #fff; }
+.popup_button.confirm:hover { background: #ff0000; box-shadow: 0 0 10px rgba(255, 0, 0, 0.4); }
